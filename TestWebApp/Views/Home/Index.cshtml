@@ -1,0 +1,13 @@
+﻿
+
+<a href="#" onclick="callServerFunction()">Запустить</a>
+
+<script>
+    function callServerFunction() {
+        fetch('/Home/Open')
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            });
+    }
+</script>

@@ -1,0 +1,16 @@
+﻿
+<input type="number" id="num1" />
+<input type="number" id="num2" />
+<br />
+<a href="#" onclick="callServerFunction()">Выбрать</a>
+<div id="divValue"></div>
+<script>
+    function callServerFunction() {
+        fetch('/Home/Go?num1=' + document.getElementById('num1').value + '&num2=' + document.getElementById('num2').value)
+            .then(response => response.json())
+            .then(data => {
+                var div = document.getElementById("divValue");
+                div.innerHTML = data;
+            });
+    }
+</script>
